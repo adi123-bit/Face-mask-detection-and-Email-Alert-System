@@ -13,6 +13,8 @@ Problem: Today Face Mask has become compulsory for all the people in the world, 
 
 Objective: To Make a LIVE_STREAM MASK DETECTION SYSTEM Where It detects and recognizes the face and warns that person and also send mail alerts to the admin when it finds someone without mask.
 
+DATASET: click to download https://drive.google.com/drive/folders/1XDte2DL2Mf_hw4NsmGst7QtYoU7sMBVG?usp=sharing
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
