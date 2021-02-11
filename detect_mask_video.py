@@ -155,7 +155,7 @@ while True:
                                    subtype="jpg", filename=fname)
 
             with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-                smtp.login('2018.aditya.sawant@ves.ac.in', '')
+                smtp.login('2018.aditya.sawant@ves.ac.in', 'beisbe8es@6272agga')
                 smtp.send_message(msg)
             print('[INFO] alert mail Sent to authorities')
         elif(label == 'Mask'):
