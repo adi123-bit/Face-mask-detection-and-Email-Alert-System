@@ -159,8 +159,6 @@ while True:
             msg['To'] = 'adityasawant979@gmail.com'
             msg.set_content(
                 'A person has been detected without a face mask. Below is the attached image of that person.Please Alert the Authorities.\n'
-                'From:\n'
-                'Name- Aditya Sawant\n'
             )
 
             with open("Output/detected.jpg", "rb") as f:
@@ -170,7 +168,7 @@ while True:
                                    subtype="jpg", filename=fname)
 
             with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-                smtp.login('2018.aditya.sawant@ves.ac.in', '@a15a31a17')
+                smtp.login('2018.aditya.sawant@ves.ac.in', 'dshbvjhdbzjfh')
                 smtp.send_message(msg)
             print('[INFO] alert mail Sent to authorities')
         elif(label == 'Mask'):
