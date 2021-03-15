@@ -124,8 +124,23 @@ while True:
 
         # determine the class label and color we'll use to draw
         # the bounding box and text
+	
+
         label = "Mask" if mask > withoutmask else "No Mask"
         color = (0, 255, 0) if label == "Mask" else (0, 0, 255)
+
+
+        label = "{}: {:.2f}%".format(label, max(mask, withoutmask) * 100)
+        # display the label and bounding box rectangle on the output
+        # frame
+        cv2.putText(frame, label, (startX, startY - 10),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
+        cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
+
+
+        label = "Mask" if mask > withoutmask else "No Mask"
+        color = (0, 255, 0) if label == "Mask" else (0, 0, 255)
+
         # include the probability in the label
         if(label == 'No Mask'):
 
@@ -155,7 +170,7 @@ while True:
                                    subtype="jpg", filename=fname)
 
             with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-                smtp.login('2018.aditya.sawant@ves.ac.in', 'beisbe8es@6272agga')
+                smtp.login('2018.aditya.sawant@ves.ac.in', '@a15a31a17')
                 smtp.send_message(msg)
             print('[INFO] alert mail Sent to authorities')
         elif(label == 'Mask'):
@@ -169,14 +184,6 @@ while True:
             print("Invalid")
         print("[INFO] saving image...")
         cv2.imwrite("./Output/detected.jpg", frame)
-
-        label = "{}: {:.2f}%".format(label, max(mask, withoutmask) * 100)
-
-        # display the label and bounding box rectangle on the output
-        # frame
-        cv2.putText(frame, label, (startX, startY - 10),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
-        cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
 
 
 # show the output frame
@@ -192,3 +199,4 @@ cv2.destroyAllWindows()
 vs.stop()
 
 # autopep8 -i detect_mask_video.py
+# python detect_mask_video.py --face face_detector --age age_detector
